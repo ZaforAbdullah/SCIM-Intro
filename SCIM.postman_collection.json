@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "3d8a169e-df53-4307-bb6e-20c04ae0e3d0",
+		"name": "SCIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36763108"
+	},
+	"item": [
+		{
+			"name": "SCIM POST",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"jdoe\",\r\n  \"name\": {\r\n    \"givenName\": \"John\",\r\n    \"familyName\": \"Doe\"\r\n  },\r\n  \"emails\": [\r\n    {\r\n      \"value\": \"jdoe@example.com\",\r\n      \"primary\": true\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{localhost}}:5000/Users",
+					"protocol": "http",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "5000",
+					"path": [
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{localhost}}:5000/Users",
+					"protocol": "http",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "5000",
+					"path": [
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{localhost}}:5000/Users/3bea4936-5006-4f1e-838f-22fa9e1faea0",
+					"protocol": "http",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "5000",
+					"path": [
+						"Users",
+						"3bea4936-5006-4f1e-838f-22fa9e1faea0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SCIM POST Groups",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"displayName\": \"displayNamejdoe\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{localhost}}:5000/Groups",
+					"protocol": "http",
+					"host": [
+						"{{localhost}}"
+					],
+					"port": "5000",
+					"path": [
+						"Groups"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "localhost"
+		}
+	]
+}
